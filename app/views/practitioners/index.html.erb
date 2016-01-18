@@ -14,9 +14,12 @@
     <% @practitioners.each do |practitioner| %>
       <tr>
         <td><%= practitioner.name %></td>
+        <td><%= practitioner.user.email if practitioner.user %></td>
         <td><%= link_to 'Show', practitioner %></td>
-        <td><%= link_to 'Edit', edit_practitioner_path(practitioner) %></td>
-        <td><%= link_to 'Destroy', practitioner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if practitioner.user == current_user %>
+          <td><%= link_to 'Edit', edit_practitioner_path(practitioner) %></td>
+          <td><%= link_to 'Destroy', practitioner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +27,6 @@
 
 <br>
 
-<%= link_to 'New Practitioner', new_practitioner_path %>
+<% if user_signed_in? %>
+  <%= link_to 'New Practitioner', new_practitioner_path %>
+<% end %>
