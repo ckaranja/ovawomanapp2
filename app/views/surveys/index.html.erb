@@ -1,0 +1,19 @@
+<div class="questionnaires_<%= action_name %>">
+  <h1>
+      List of surveys here
+  </h1>
+  <hr>
+  <% if user_signed_in? %>
+    <%= link_to "New Survey", new_survey %>
+  <% end %>
+  <ul>
+    <% @surveys.each do |survey| %>
+      <li>
+        <%= link_to survey.name, edit_survey(survey) %>
+        <%= link_to "Take this survey", new_attempt_path(survey_id: survey.id), class: 'survey-name' %>
+        <%= link_to 'Edit', edit_survey_path(survey) %>
+      </li>
+    <% end -%>
+  </ul>
+
+</div>

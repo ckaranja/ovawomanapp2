@@ -23,6 +23,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass'
 # bundle exec rake doc:rails generates the API under doc/api.
 
+# survey gem
+gem "survey", "~> 0.1"
+
 #devise for users
 gem 'devise', '~> 3.5', '>= 3.5.3'
 

@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :admins
   resources :practitioners
+  resources :surveys
+  resources :attempts
   devise_for :users
   root "pages#home"
   get "about" => "pages#about" #creates about path

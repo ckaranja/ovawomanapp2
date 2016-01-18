@@ -1,7 +1,7 @@
 <div class="jumbotron center">
      <h1>Welcome to Ova Woman!</h1>
-		<% if user_signed_in? %>
-		          # do something
+		<% if user_signed_in?  or admin_signed_in? %>
+		       Share your story
 		<% else %>
 	    <p>
 	       <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
