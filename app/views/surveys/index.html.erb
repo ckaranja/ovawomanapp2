@@ -8,9 +8,13 @@
   <% end %>
   <ul>
     <% @surveys.each do |survey| %>
-      <li>
-        <%= link_to survey.name, edit_survey(survey) %>
+
+
+    <div class="square">
         <%= link_to "Take this survey", new_attempt_path(survey_id: survey.id), class: 'survey-name' %>
+    </div>
+
+      <li>
         <%= link_to 'Edit', edit_survey_path(survey) %>
       </li>
     <% end -%>

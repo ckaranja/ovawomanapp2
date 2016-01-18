@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @practitioner.name %>
-</p>
+<div class="square">
+    <%= @practitioner.name %>
+    <%= @practitioner.description %>
+</div>
 
 <% if @practitioner.user == current_user %>
 	<%= link_to 'Edit', edit_practitioner_path(@practitioner) %> |

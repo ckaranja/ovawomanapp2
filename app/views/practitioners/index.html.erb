@@ -14,6 +14,7 @@
     <% @practitioners.each do |practitioner| %>
       <tr>
         <td><%= practitioner.name %></td>
+        <td><%= practitioner.description %></td>
         <td><%= practitioner.user.email if practitioner.user %></td>
         <td><%= link_to 'Show', practitioner %></td>
         <% if practitioner.user == current_user %>
