@@ -60,6 +60,6 @@ class PractitionersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def practitioner_params
-      params.require(:practitioner).permit(:name)
+      params.require(:practitioner).permit(:name, :description)
     end
 end
