@@ -1,0 +1,24 @@
+
+
+<%= form_for(@practitioner) do |f| %>
+  <% if @practitioner.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@practitioner.errors.count, "error") %> prohibited this practitioner from being saved:</h2>
+
+      <ul>
+      <% @practitioner.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>
